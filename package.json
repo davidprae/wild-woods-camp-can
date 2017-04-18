@@ -1,7 +1,7 @@
 {
-  "name": "wildwoods-camp-can",
+  "name": "wild-woods-camp-can",
   "version": "1.0.0",
-  "description": "Wildwoods Camp Can website",
+  "description": "Wild Woods Camp Can website",
   "scripts": {
     "build-css": "node-sass --include-path scss sass/app.scss --source-map true  css/app.css && postcss -u autoprefixer -r css/*.css",
     "minimize-css": "postcss -u cssnano -o css/app.min.css css/app.css",

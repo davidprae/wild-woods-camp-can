@@ -1,0 +1,33 @@
+/*
+ * Typography
+ */
+
+html {
+	font-size: 62.5%; /* Makes REM easy to use (just multiply by 10 to get pixel value) */
+}
+
+body {
+	color: $color--primary;
+	font-family: $font-stack--primary;
+	@include rem('font-size', 18px );
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: 0.53px;
+	@include rem('line-height', 28px );
+}
+
+/* Headings */
+h1 {
+	@include rem('font-size', 34px );
+	@include rem('margin', 20px 0 0 );
+	@include rem('line-height', 43px );
+
+	@media (min-width: $bp-small) {
+		@include rem('font-size', 44px );
+		@include rem('line-height', 53px );
+	}
+}
+
+figcaption {
+	font-weight: 700;
+}

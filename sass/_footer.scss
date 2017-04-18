@@ -1,0 +1,14 @@
+.global-footer {
+	line-height: 0;
+	margin: 50px 0 70px;
+	text-align: center;
+
+	@media (min-width: $bp-small) {
+		margin: 104px 0 130px;
+	}
+
+	&--logo {
+		max-width: 229px;
+
+	}
+}

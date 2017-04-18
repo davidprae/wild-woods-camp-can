@@ -1,0 +1,255 @@
+/*
+ * Thumbnail List
+ */
+
+.thumbnail-list {
+ 	list-style: none;
+ 	margin: 0 auto;
+ 	max-width: 273px;
+ 	padding: 0;
+
+ 	@media (min-width: $bp-small) {
+		max-width: none;
+	}
+
+ 	li {
+ 		margin-bottom: 80px;
+
+ 		@media (min-width: $bp-small) {
+ 			float: left;
+ 			width: 273px;
+ 		}
+
+ 		@media (min-width: $bp-small) and (max-width: $bp-medium - 1px) {
+
+ 			&:nth-child(2n) {
+				float: right;
+ 			}
+
+ 			&:nth-child(2n+1) {
+				clear: both;
+ 			}
+ 		}
+
+ 		@media (min-width: $bp-medium) {	
+
+ 			&:not(:last-child) {
+ 				margin: 0 0 84px 47px;
+ 			}
+
+ 			&:nth-child(4n + 1):not(:last-child) {
+				clear: both;
+				margin-left: 0;
+
+				.thumbnail-list--img-wrap {
+					max-width: 246px;
+				}
+ 			}
+ 		}
+
+ 		&:last-child {
+
+ 			.thumbnail-list--img-wrap {
+				background-color: rgba(0,0,0,0);
+
+				@media (min-width: $bp-small) {
+					height: auto;
+				}
+			}
+
+			@media (min-width: $bp-small) {
+ 				margin: 24px 0 0;
+				text-align: center;
+				width: 100%;
+
+				figure, p {
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				figure {
+					width: 587px;
+				}
+
+				p {
+					width: 410px;
+				}
+			}
+ 		}
+ 	}
+
+	figure {
+		margin-bottom: 26px;
+	}
+
+	figcaption {
+		margin: 35px 0 0;
+	}
+
+	&--img-wrap {
+		background-color: $color--accent;
+		height: 180px;
+	}
+
+	p {
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* If the browser support Flexbox, why not? PS: Comment this out to see just a float layout! */
+@supports (display: flex) {
+	
+	.thumbnail-list {
+
+	 	@media (min-width: $bp-small) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		li {
+
+	 		@media (min-width: $bp-small) {
+	 			float: none;
+	 		}
+
+	 		@media (min-width: $bp-small) and (max-width: $bp-medium - 1px) {
+
+	 			&:nth-child(2n) {
+					float: none;
+	 			}
+	 		}
+		}
+	}
+}
+
+/* Uncomment this to try out CSS grid! Note: The reason this is commented out is because Edge doesn't handle this well, it passes the @supports test but doesn't render CSS grid correctly. Another note: Modernizr doesn't have feature detection for CSS grid yet so I couldn't use that to solve this problem. */
+// @supports (display: grid) {
+	
+// 	.thumbnail-list {
+
+// 	 	@media (min-width: $bp-small) {
+// 			display: grid;
+// 			grid-column-gap: 47px;
+// 			grid-template-columns: 273px 273px;
+// 		}
+
+// 		@media (min-width: $bp-medium) {
+// 			grid-template-columns: 273px 273px 273px 273px;
+// 		}
+
+// 		li {
+
+// 	 		@media (min-width: $bp-small) {
+// 	 			float: none;
+
+// 	 			&:last-child {
+// 					grid-column: 1 / -1;
+// 	 			}
+// 	 		}
+
+// 	 		@media (min-width: $bp-small) and (max-width: $bp-medium - 1px) {
+
+// 	 			&:nth-child(2n) {
+// 					float: none;
+// 	 			}
+// 	 		}
+
+// 	 		@media (min-width: $bp-medium) {
+// 	 			margin-left: 0 !important;
+// 	 		}
+// 		}
+// 	}
+// }
+
+/* Module Variations */
+/* Below styling is specifically for arranging the Camp Can instruction illustrations, not needed for general module use */
+.thumbnail-list__instruction-list {
+
+	figure {
+
+		.thumbnail-list--img-wrap {
+			position: relative;
+			z-index: -1;
+		}
+
+		img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+
+	&--step-1 figure img {
+		transform: translate(calc(-50% + 25px), calc(-50% + -7px));
+
+		@media (min-width: $bp-small) {
+			transform: translate(calc(-50% + 40px), calc(-50% + -7px));
+		}
+	}
+
+	&--step-2 figure img {
+		transform: translate(-50%, calc(-50% - 25px));
+	}
+
+	&--step-3 figure img {
+		transform: translate(calc(-50% + 40px), calc(-50% - 35px));
+	}
+
+	&--step-5 figure img {
+		transform: translate(calc(-50% + 7px), calc(-50% - 25px));
+	}
+
+	&--step-6 figure img {
+		transform: translate(calc(-50% + 45px), calc(-50% - 19px));
+	}
+
+	&--step-8 figure img {
+		transform: translate(-50%, calc(-50% - 14px));
+	}
+
+	&--step-10 figure img {
+		transform: translate(-50%, calc(-50% - 8px));
+	}
+
+	&--step-12 figure img {
+		transform: translate(-50%, calc(-50% - 4px));
+	}
+
+	&--step-13 figure img {
+		transform: translate(-50%, calc(-50% - 29px));
+	}
+
+	&--step-14 figure img {
+		transform: translate(-50%, calc(-50% - 19px));
+	}
+
+	&--step-16 figure img {
+		transform: translate(-50%, calc(-50% + 14px));
+	}
+
+	&--step-final figure {
+
+		img {
+			left: auto;
+			position: static;
+			top: auto;
+			transform: none;
+
+			@media (min-width: $bp-small) {
+				left: 20px;
+				position: relative;
+			}
+
+			@media (min-width: $bp-medium) {
+				left: 37px;
+			}
+		}
+	}
+		
+}

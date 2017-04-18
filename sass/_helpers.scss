@@ -1,0 +1,21 @@
+/*
+ * Helpers
+ * Info: these classes are just generally useful but don't fall into a specific layout of a site
+ */
+
+ /* accessibly hide text (so screen readers can see) */
+.screen-reader-text {
+	height: 1px;
+	left: -10000px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	width: 1px;
+}
+
+/* the famous */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
